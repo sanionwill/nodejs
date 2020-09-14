@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*
+      * 消除元素间隔，避免边缘间距
+      */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*
+      * 设置html和body元素占满
+      */
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        /*
+      * 设置容器占满
+      */
+        .wrapper {
+            height: 100%;
+            width: 100%;
+            position: relative; /* 注意：容器元素设置relative*/
+            background-color: lightgray;
+        }
+
+        /*
+      * 设置内容位置
+      */
+        .container {
+            position: absolute; /* 注意：内容元素设置absolute*/
+            left: 0; /* 设置内容边缘贴近容器边沿*/
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 500px; /* 设置宽高*/
+            height: 500px;
+            margin: auto; /* 注意：内容元素设置margin=auto实现居中*/
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container" id="qrimg"></div>
+    </div>
+
+    <!-- 引用二维码生成器 -->
+    <script src="qrcode.min.js"></script>
+    <script>
+        window.onload = function () {
+            var qrcode;
+            try {
+                // 获取二维码字符串。eg：
+                var s = document.URL.split("?")[1].split("=")[1];
+
+                // 设置二维码对象
+                qrcode = new QRCode(document.getElementById("qrimg"), {
+                    width: 500, //显示宽度，与#qrimg元素宽度相同
+                    height: 500, //显示高度，与#qrimg元素高度相同
+                });
+
+                // 生成
+                qrcode.makeCode(s);
+            } catch (e) {
+                console.log(e);
+            }
+        };
+    </script>
+</body>

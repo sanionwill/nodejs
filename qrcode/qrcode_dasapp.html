@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>欢迎访问达实大厦</title>
+    <style type="text/css">
+        body {
+            margin: 0 auto;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 308px;
+            max-height: 308px;
+            align-items: center;
+        }
+
+        #tip {
+            font-size: 1.2em;
+            font-family: serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="tip">达实大厦大堂闸机通行</div>
+    </div>
+    <script>
+        window.onload = function () {
+            try {
+                var s = document.URL.split("?")[1].split("=")[1];
+                var img = new Image();
+                img.src = "http://183.56.160.72:9032/GetQRCode.ashx?s=" + s;
+
+                var con = document.getElementById("container");
+                var tip = document.getElementById("tip");
+                con.insertBefore(img, tip);
+            } catch (e) {
+                console.log(e);
+            }
+        };
+    </script>
+</body>
