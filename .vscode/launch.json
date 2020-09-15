@@ -10,7 +10,7 @@
             "name": "启动程序",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/nodemon",
             "skipFiles": ["<node_internals>/**"],
-            "program": "${workspaceFolder}\\spider\\1.js"
+            "program": "${workspaceFolder}\\361client\\server.js"
         }
     ]
 }

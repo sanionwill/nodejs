@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require("express"); //npm install -g express-generator
 const server = express();
 
 //中间件，日志函数
