@@ -1,0 +1,10 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth0:
+      dhcp4: false
+      addresses: [172.168.120.176]
+      gateway4: 172.168.120.1
+      nameservers:
+        addresses: [8.8.8.8,114.114.114.114]

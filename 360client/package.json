@@ -1,0 +1,14 @@
+{
+    "name": "360server",
+    "version": "1.0.0",
+    "description": "360模拟设备",
+    "author": "weisl",
+    "main": "tcpserver.js",
+    "scripts": {
+        "start": "node tcpserver.js"
+    },
+    "dependencies": {
+        "express": "^4.13.3",
+        "moment": "^2.28.0"
+    }
+}
