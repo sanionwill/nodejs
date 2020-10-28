@@ -1,0 +1,16 @@
+//整个文件与服务端一致，不允许修改
+
+syntax = "proto3";
+option csharp_namespace="GrpcService";
+package greet;
+
+service Greeter{
+    rpc  SayHello (HelloRequest) returns (HelloReply);  
+}
+
+message HelloRequest{
+    string Name=1;
+}
+message HelloReply{
+    string Message=1;
+}
